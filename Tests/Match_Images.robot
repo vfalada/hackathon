@@ -14,4 +14,5 @@ Match
     ${images}=    Normalize Path    ${CURDIR}/../Resources/Image_Matching/  
     @{templates}=    Set Variable   ${images}/image1.png    ${images}/image2.png    ${images}/image3.png   
     Capture Page Screenshot    ${screenshot}    
-    Find Matches    ${templates}    ${screenshot}    ${output}    0.8      
+    Find Matches    ${templates}    ${screenshot}    ${output}    0.8    
+    Check Fail 
