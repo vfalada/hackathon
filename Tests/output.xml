@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181121 11:08:01.159" generator="Robot 3.0.4 (Python 2.7.14 on darwin)">
+<suite source="/Users/falada/Testing/Robot_Kurzy/Image_Rec/Tests/Match_Images.robot" id="s1" name="Match Images">
+<test id="s1-t1" name="Match">
+<kw type="setup" name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>https://demo.mahara.org/</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20181121 11:08:01.378" level="INFO">Opening browser 'chrome' to base url 'https://demo.mahara.org/'.</msg>
+<status status="PASS" endtime="20181121 11:08:10.441" starttime="20181121 11:08:01.378"></status>
+</kw>
+<kw name="Normalize Path" library="OperatingSystem">
+<doc>Normalizes the given path.</doc>
+<arguments>
+<arg>/Users/falada/Testing/Robot_Kurzy/Image_Rec/Tests/../Outputs/Mahara.png</arg>
+</arguments>
+<assign>
+<var>${screenshot}</var>
+</assign>
+<msg timestamp="20181121 11:08:10.442" level="INFO">${screenshot} = /Users/falada/Testing/Robot_Kurzy/Image_Rec/Outputs/Mahara.png</msg>
+<status status="PASS" endtime="20181121 11:08:10.442" starttime="20181121 11:08:10.441"></status>
+</kw>
+<kw name="Normalize Path" library="OperatingSystem">
+<doc>Normalizes the given path.</doc>
+<arguments>
+<arg>/Users/falada/Testing/Robot_Kurzy/Image_Rec/Tests/../Outputs/</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20181121 11:08:10.442" level="INFO">${output} = /Users/falada/Testing/Robot_Kurzy/Image_Rec/Outputs</msg>
+<status status="PASS" endtime="20181121 11:08:10.442" starttime="20181121 11:08:10.442"></status>
+</kw>
+<kw name="Normalize Path" library="OperatingSystem">
+<doc>Normalizes the given path.</doc>
+<arguments>
+<arg>/Users/falada/Testing/Robot_Kurzy/Image_Rec/Tests/../Resources/Image_Matching/</arg>
+</arguments>
+<assign>
+<var>${images}</var>
+</assign>
+<msg timestamp="20181121 11:08:10.443" level="INFO">${images} = /Users/falada/Testing/Robot_Kurzy/Image_Rec/Resources/Image_Matching</msg>
+<status status="PASS" endtime="20181121 11:08:10.443" starttime="20181121 11:08:10.443"></status>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<arguments>
+<arg>${images}/image1.png</arg>
+<arg>${images}/image2.png</arg>
+<arg>${images}/image3.png</arg>
+</arguments>
+<assign>
+<var>@{templates}</var>
+</assign>
+<msg timestamp="20181121 11:08:10.444" level="INFO">@{templates} = [ /Users/falada/Testing/Robot_Kurzy/Image_Rec/Resources/Image_Matching/image1.png | /Users/falada/Testing/Robot_Kurzy/Image_Rec/Resources/Image_Matching/image2.png | /Users/falada/Testing/Robot_Kurzy/...</msg>
+<status status="PASS" endtime="20181121 11:08:10.444" starttime="20181121 11:08:10.443"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<arguments>
+<arg>${screenshot}</arg>
+</arguments>
+<msg timestamp="20181121 11:08:10.758" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../Outputs/Mahara.png"&gt;&lt;img src="../Outputs/Mahara.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20181121 11:08:10.758" starttime="20181121 11:08:10.444"></status>
+</kw>
+<kw name="Find Matches" library="Matching">
+<arguments>
+<arg>${templates}</arg>
+<arg>${screenshot}</arg>
+<arg>${output}</arg>
+<arg>0.8</arg>
+</arguments>
+<msg timestamp="20181121 11:08:10.759" level="INFO">[u'/Users/falada/Testing/Robot_Kurzy/Image_Rec/Resources/Image_Matching/image1.png', u'/Users/falada/Testing/Robot_Kurzy/Image_Rec/Resources/Image_Matching/image2.png', u'/Users/falada/Testing/Robot_Kurzy/Image_Rec/Resources/Image_Matching/image3.png']</msg>
+<msg timestamp="20181121 11:08:10.759" level="INFO">Template: /Users/falada/Testing/Robot_Kurzy/Image_Rec/Resources/Image_Matching/image1.png</msg>
+<msg timestamp="20181121 11:08:10.759" level="INFO">Output path: /Users/falada/Testing/Robot_Kurzy/Image_Rec/Outputs/output_0.png</msg>
+<msg timestamp="20181121 11:08:10.759" level="INFO">Screenshot path: /Users/falada/Testing/Robot_Kurzy/Image_Rec/Outputs/Mahara.png</msg>
+<msg timestamp="20181121 11:08:10.837" level="INFO">Loc: (array([93]), array([909]))</msg>
+<msg timestamp="20181121 11:08:10.837" level="INFO">Template found.</msg>
+<msg timestamp="20181121 11:08:10.852" level="INFO">Template: /Users/falada/Testing/Robot_Kurzy/Image_Rec/Resources/Image_Matching/image2.png</msg>
+<msg timestamp="20181121 11:08:10.852" level="INFO">Output path: /Users/falada/Testing/Robot_Kurzy/Image_Rec/Outputs/output_1.png</msg>
+<msg timestamp="20181121 11:08:10.852" level="INFO">Screenshot path: /Users/falada/Testing/Robot_Kurzy/Image_Rec/Outputs/Mahara.png</msg>
+<msg timestamp="20181121 11:08:10.921" level="INFO">Loc: (array([], dtype=int64), array([], dtype=int64))</msg>
+<msg timestamp="20181121 11:08:10.921" level="ERROR">Template /Users/falada/Testing/Robot_Kurzy/Image_Rec/Resources/Image_Matching/image2.png was not found in the picture!</msg>
+<status status="FAIL" endtime="20181121 11:08:10.921" starttime="20181121 11:08:10.758"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20181121 11:08:11.003" starttime="20181121 11:08:10.922"></status>
+</kw>
+<status status="FAIL" endtime="20181121 11:08:11.003" critical="yes" starttime="20181121 11:08:01.377">Template not found</status>
+</test>
+<status status="FAIL" endtime="20181121 11:08:11.004" starttime="20181121 11:08:01.162"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Match Images" pass="0">Match Images</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20181121 11:08:10.921" level="ERROR">Template /Users/falada/Testing/Robot_Kurzy/Image_Rec/Resources/Image_Matching/image2.png was not found in the picture!</msg>
+</errors>
+</robot>

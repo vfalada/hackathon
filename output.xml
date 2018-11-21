@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20181121 11:05:12.604" generator="Robot 3.0.4 (Python 2.7.14 on darwin)">
+<suite source="/Users/falada/Testing/Robot_Kurzy/Image_Rec" id="s1" name="Image Rec">
+<suite source="/Users/falada/Testing/Robot_Kurzy/Image_Rec/Tests" id="s1-s1" name="Tests">
+<suite source="/Users/falada/Testing/Robot_Kurzy/Image_Rec/Tests/Match_Images.robot" id="s1-s1-s1" name="Match Images">
+<test id="s1-s1-s1-t1" name="Match">
+<kw type="setup" name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>https://demo.mahara.org/</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20181121 11:05:12.846" level="INFO">Opening browser 'chrome' to base url 'https://demo.mahara.org/'.</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20181121 11:05:12.872" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" endtime="20181121 11:05:12.873" starttime="20181121 11:05:12.871"></status>
+</kw>
+<msg timestamp="20181121 11:05:12.876" level="FAIL">WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+</msg>
+<status status="FAIL" endtime="20181121 11:05:12.876" starttime="20181121 11:05:12.846"></status>
+</kw>
+<kw type="teardown" name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20181121 11:05:12.877" starttime="20181121 11:05:12.877"></status>
+</kw>
+<status status="FAIL" endtime="20181121 11:05:12.877" critical="yes" starttime="20181121 11:05:12.845">Setup failed:
+WebDriverException: Message: 'chromedriver' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+</status>
+</test>
+<status status="FAIL" endtime="20181121 11:05:12.879" starttime="20181121 11:05:12.641"></status>
+</suite>
+<status status="FAIL" endtime="20181121 11:05:12.881" starttime="20181121 11:05:12.639"></status>
+</suite>
+<status status="FAIL" endtime="20181121 11:05:12.883" starttime="20181121 11:05:12.621"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Image Rec" pass="0">Image Rec</stat>
+<stat fail="1" id="s1-s1" name="Tests" pass="0">Image Rec.Tests</stat>
+<stat fail="1" id="s1-s1-s1" name="Match Images" pass="0">Image Rec.Tests.Match Images</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
